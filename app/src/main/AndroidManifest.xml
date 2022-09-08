@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sahilhans0605.bygbrains">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.BygBrains">
+        <activity
+            android:name=".activity.PhoneVerificationSignIN"
+            android:exported="false" />
+        <activity
+            android:name=".activity.UserDetails"
+            android:exported="false" />
+        <activity
+            android:name=".activity.OTPSignIn"
+            android:exported="false" />
+        <activity
+            android:name=".activity.HomePage"
+            android:exported="false" />
+        <activity
+            android:name=".activity.BasicQuestions"
+            android:exported="false" />
+        <activity
+            android:name=".activity.PhoneVerification"
+            android:exported="false" />
+        <activity
+            android:name=".activity.StartingPage"
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

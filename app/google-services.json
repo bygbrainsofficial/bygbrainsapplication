@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "983818406158",
+    "project_id": "bygbrains-eb1ff",
+    "storage_bucket": "bygbrains-eb1ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:983818406158:android:a27b6d9bbb0df5d808ef5f",
+        "android_client_info": {
+          "package_name": "com.sahilhans0605.bygbrains"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "983818406158-ohe9kvu8b1q3207jncl7tbus4es683ot.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzPK-WNpoHvZ7YGcxxlsJoVpaV9d_gchU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "983818406158-ohe9kvu8b1q3207jncl7tbus4es683ot.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
