@@ -1,7 +1,23 @@
 package com.sahilhans0605.bygbrains.modelClass;
 
 public class Questions {
-    String Question, option1, option2, option3, option4, option5, interaction;
+    String Question;
+    String option1;
+    String option2;
+    String option3;
+    String option4;
+    String option5;
+    String interaction;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    String id;
 
     public Questions() {
     }
@@ -62,7 +78,7 @@ public class Questions {
         this.interaction = ans;
     }
 
-    public Questions(String question, String option1, String option2, String option3, String option4, String option5, String interaction) {
+    public Questions(String question, String option1, String option2, String option3, String option4, String option5, String interaction, String id) {
         Question = question;
         this.option1 = option1;
         this.option2 = option2;
@@ -70,5 +86,6 @@ public class Questions {
         this.option4 = option4;
         this.option5 = option5;
         this.interaction = interaction;
+        this.id = id;
     }
 }
