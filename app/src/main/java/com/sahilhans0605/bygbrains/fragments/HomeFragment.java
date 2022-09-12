@@ -3,6 +3,7 @@ package com.sahilhans0605.bygbrains.fragments;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ScrollView;
 
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -66,13 +68,17 @@ public class HomeFragment extends Fragment {
                 adapter.notifyDataSetChanged();
             }
         });
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        binding.categoryRecyclerView.setLayoutManager(layoutManager);
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        GridLayoutManager layoutManager1= new GridLayoutManager(getActivity(),2);
+        layoutManager1.setOrientation(RecyclerView.VERTICAL);
+        binding.categoryRecyclerView.setLayoutManager(layoutManager1);
         binding.categoryRecyclerView.setAdapter(adapter);
+        binding.categoryRecyclerView.setHasFixedSize(false);
+        binding.categoryRecyclerView.setNestedScrollingEnabled(false);
+        ViewCompat.setNestedScrollingEnabled(binding.categoryRecyclerView, false);
+        binding.categoryRecyclerView.smoothScrollToPosition(binding.categoryRecyclerView.getAdapter().getItemCount());
+
 
         return view;
     }
-
-
 }

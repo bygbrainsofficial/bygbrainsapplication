@@ -42,11 +42,11 @@ public class BasicQuestions extends AppCompatActivity {
         dialog.setMessage("loading...");
         dialog.setCanceledOnTouchOutside(false);
         db = FirebaseDatabase.getInstance();
-        user=FirebaseAuth.getInstance().getCurrentUser();
+        user = FirebaseAuth.getInstance().getCurrentUser();
         questions = new ArrayList<>();
-        questions.add(new Questions("Most of the time you feel?", "Good", "Stressed", "Sad", "Indifferent", "Happy", "Alright!,Let's proceed"));
-        questions.add(new Questions("What profession are you in?", "Student", "Job", "Self work", "HouseWife", "Other", ":) Awesome you are doing a great job!"));
-        questions.add(new Questions("You want to improve in", "Anxiety", "Depression", "Sleep", "Other Disorder", "Be happy", "Be relaxed let's work on this!"));
+        questions.add(new Questions("Most of the time you feel?", "Good", "Stressed", "Sad", "Indifferent", "Happy", "Alright!,Let's proceed", "BQ1"));
+        questions.add(new Questions("What profession are you in?", "Student", "Job", "Self work", "HouseWife", "Other", ":) Awesome you are doing a great job!", "BQ2"));
+        questions.add(new Questions("You want to improve in", "Anxiety", "Depression", "Sleep", "Other Disorder", "Be happy", "Be relaxed let's work on this!", "BQ3"));
 
         setNextQuestion();
 
@@ -99,7 +99,6 @@ public class BasicQuestions extends AppCompatActivity {
                 break;
 
 
-
             case R.id.button:
 
                 binding.button.setVisibility(View.INVISIBLE);
@@ -107,7 +106,7 @@ public class BasicQuestions extends AppCompatActivity {
                 dialog.show();
                 Map<String, String> map = new HashMap<>();
                 map.put(question.getQuestion(), chosen);
-                db.getReference().child("BasicQuestions").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).push().setValue(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                db.getReference().child("BasicQuestions").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(question.getId()).setValue(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
                         dialog.dismiss();

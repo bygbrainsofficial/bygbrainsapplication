@@ -3,109 +3,136 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.HomeFragment">
+    android:isScrollContainer="true"
+    android:id="@+id/scrollView"
+    android:overScrollMode="always"
+    >
 
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="413dp"
-        android:layout_height="142dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="66dp"
-            android:layout_height="69dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="40dp"
-            android:src="@drawable/smile" />
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="74dp"
-            android:layout_height="77dp"
-            android:layout_marginLeft="210dp"
-            android:layout_marginTop="40dp"
-            android:src="@drawable/stressed" />
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="82dp"
-            android:layout_height="71dp"
-            android:layout_marginLeft="300dp"
-            android:layout_marginTop="40dp"
-            android:src="@drawable/sadlast" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="67dp"
-            android:layout_height="73dp"
-            android:layout_marginLeft="130dp"
-            android:layout_marginTop="40dp"
-            android:src="@drawable/normalface" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:layout_marginLeft="60dp"
-            android:textStyle="bold"
-            android:layout_height="wrap_content"
-            android:text="Hi,How are you feeling today?" />
-
-    </androidx.cardview.widget.CardView>
-
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/recyclerposts"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="223dp"-->
-<!--        android:layout_marginTop="1dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.0"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/cardView"-->
-<!--        tools:listitem="@layout/postexplorerow" />-->
-    <com.smarteist.autoimageslider.SliderView
-        android:id="@+id/imageSlider"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="450dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:sliderAnimationDuration="600"
-        app:sliderAutoCycleDirection="back_and_forth"
-        app:sliderAutoCycleEnabled="true"
-        app:sliderIndicatorAnimationDuration="600"
-        app:sliderIndicatorGravity="center_horizontal|bottom"
-        app:sliderIndicatorMargin="15dp"
-        app:sliderIndicatorOrientation="horizontal"
-        app:sliderIndicatorPadding="3dp"
-        app:sliderIndicatorRadius="2dp"
-        app:sliderIndicatorSelectedColor="#5A5A5A"
-        app:sliderIndicatorUnselectedColor="#FFF"
-        app:sliderScrollTimeInSec="2"
-        app:sliderStartAutoCycle="true" />
+        android:layout_height="match_parent"
+        android:overScrollMode="always"
+        tools:context=".fragments.HomeFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/categoryRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollIndicators="none"
-        android:scrollbars="none"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageSlider" />
+<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--            android:id="@+id/floatingActionButton"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:src="@drawable/ic_baseline_arrow_upward_24"-->
+<!--            app:fabCustomSize="50dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            />-->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="413dp"
+            android:layout_height="142dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="66dp"
+                android:layout_height="69dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/smile" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="74dp"
+                android:layout_height="77dp"
+                android:layout_marginLeft="210dp"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/stressed" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="82dp"
+                android:layout_height="71dp"
+                android:layout_marginLeft="300dp"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/sadlast" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="67dp"
+                android:layout_height="73dp"
+                android:layout_marginLeft="130dp"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/normalface" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:text="Hi,How are you feeling today?"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!--    <androidx.recyclerview.widget.RecyclerView-->
+        <!--        android:id="@+id/recyclerposts"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="223dp"-->
+        <!--        android:layout_marginTop="1dp"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintHorizontal_bias="0.0"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:layout_constraintTop_toBottomOf="@+id/cardView"-->
+        <!--        tools:listitem="@layout/postexplorerow" />-->
+        <com.smarteist.autoimageslider.SliderView
+            android:id="@+id/imageSlider"
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            android:nestedScrollingEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView"
+            app:sliderAnimationDuration="600"
+            app:sliderAutoCycleDirection="back_and_forth"
+            app:sliderAutoCycleEnabled="true"
+            app:sliderIndicatorAnimationDuration="600"
+            app:sliderIndicatorGravity="center_horizontal|bottom"
+            app:sliderIndicatorMargin="15dp"
+            app:sliderIndicatorOrientation="horizontal"
+            app:sliderIndicatorPadding="3dp"
+            app:sliderIndicatorRadius="2dp"
+            app:sliderIndicatorSelectedColor="#5A5A5A"
+            app:sliderIndicatorUnselectedColor="#FFF"
+            app:sliderScrollTimeInSec="2"
+            app:sliderStartAutoCycle="true" />
+
+<!--        <androidx.core.widget.NestedScrollView-->
+<!--            android:id="@+id/nestedScrollView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:isScrollContainer="false"-->
+<!--            android:overScrollMode="always"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/imageSlider">-->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/categoryRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageSlider" />
+<!--        </androidx.core.widget.NestedScrollView>-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

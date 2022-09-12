@@ -26,7 +26,7 @@ public class HomePage extends AppCompatActivity {
 
         FragmentTransaction homeFragment = getSupportFragmentManager().beginTransaction();
         homeFragment.replace(R.id.frameLayout, new HomeFragment());
-        homeFragment.commit();
+       homeFragment.commit();
         binding.bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
