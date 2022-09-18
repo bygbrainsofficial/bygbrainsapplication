@@ -15,21 +15,21 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.sahilhans0605.bygbrains.R;
 import com.sahilhans0605.bygbrains.databinding.ActivityBasicQuestionsBinding;
-import com.sahilhans0605.bygbrains.modelClass.Questions;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class BasicQuestions extends AppCompatActivity {
-    ArrayList<Questions> questions;
+    ArrayList<com.sahilhans0605.bygbrains.modelClass.BasicQuestions> questions;
     ActivityBasicQuestionsBinding binding;
     int currentQuestionIndex = 0;
-    Questions question;
+    com.sahilhans0605.bygbrains.modelClass.BasicQuestions question;
     FirebaseFirestore firebaseFirestore;
     FirebaseDatabase db;
     ProgressDialog dialog;
     FirebaseUser user;
+    FirebaseAuth auth;
 
 
     @Override
@@ -38,15 +38,17 @@ public class BasicQuestions extends AppCompatActivity {
         binding = ActivityBasicQuestionsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         firebaseFirestore = FirebaseFirestore.getInstance();
+        auth = FirebaseAuth.getInstance();
+        user = FirebaseAuth.getInstance().getCurrentUser();
         dialog = new ProgressDialog(this);
         dialog.setMessage("loading...");
         dialog.setCanceledOnTouchOutside(false);
         db = FirebaseDatabase.getInstance();
         user = FirebaseAuth.getInstance().getCurrentUser();
         questions = new ArrayList<>();
-        questions.add(new Questions("Most of the time you feel?", "Good", "Stressed", "Sad", "Indifferent", "Happy", "Alright!,Let's proceed", "BQ1"));
-        questions.add(new Questions("What profession are you in?", "Student", "Job", "Self work", "HouseWife", "Other", ":) Awesome you are doing a great job!", "BQ2"));
-        questions.add(new Questions("You want to improve in", "Anxiety", "Depression", "Sleep", "Other Disorder", "Be happy", "Be relaxed let's work on this!", "BQ3"));
+        questions.add(new com.sahilhans0605.bygbrains.modelClass.BasicQuestions("Most of the time you feel?", "Good", "Stressed", "Sad", "Indifferent", "Happy", "Alright!,Let's proceed", "BQ1"));
+        questions.add(new com.sahilhans0605.bygbrains.modelClass.BasicQuestions("What profession are you in?", "Student", "Job", "Self work", "HouseWife", "Other", ":) Awesome you are doing a great job!", "BQ2"));
+        questions.add(new com.sahilhans0605.bygbrains.modelClass.BasicQuestions("You want to improve in", "Anxiety", "Depression", "Sleep", "Other Disorder", "Be happy", "Be relaxed let's work on this!", "BQ3"));
 
         setNextQuestion();
 
@@ -55,12 +57,12 @@ public class BasicQuestions extends AppCompatActivity {
     void setNextQuestion() {
         if (currentQuestionIndex < questions.size()) {
             question = questions.get(currentQuestionIndex);
-            binding.question.setText(question.getQuestion());
-            binding.option1.setText(question.getOption1());
-            binding.option2.setText(question.getOption2());
-            binding.option3.setText(question.getOption3());
-            binding.option4.setText(question.getOption4());
-            binding.option5.setText(question.getOption5());
+            binding.questionD.setText(question.getQuestion());
+            binding.option1D.setText(question.getOption1());
+            binding.option2D.setText(question.getOption2());
+            binding.option3D.setText(question.getOption3());
+            binding.option4D.setText(question.getOption4());
+            binding.option5D.setText(question.getOption5());
         }
     }
 
@@ -68,41 +70,41 @@ public class BasicQuestions extends AppCompatActivity {
 
     public void next(View view) {
         switch (view.getId()) {
-            case R.id.option1:
-                chosen = binding.option1.getText().toString();
+            case R.id.option1D:
+                chosen = binding.option1D.getText().toString();
                 break;
-            case R.id.option2:
-                chosen = binding.option2.getText().toString();
+            case R.id.option2D:
+                chosen = binding.option2D.getText().toString();
                 break;
-            case R.id.option3:
-                chosen = binding.option3.getText().toString();
+            case R.id.option3D:
+                chosen = binding.option3D.getText().toString();
                 break;
-            case R.id.option4:
-                chosen = binding.option4.getText().toString();
+            case R.id.option4D:
+                chosen = binding.option4D.getText().toString();
                 break;
-            case R.id.option5:
-                chosen = binding.option5.getText().toString();
+            case R.id.option5D:
+                chosen = binding.option5D.getText().toString();
                 break;
         }
 
         switch (view.getId()) {
 
-            case R.id.option1:
-            case R.id.option2:
-            case R.id.option3:
-            case R.id.option4:
-            case R.id.option5:
+            case R.id.option1D:
+            case R.id.option2D:
+            case R.id.option3D:
+            case R.id.option4D:
+            case R.id.option5D:
 
-                binding.interaction.setVisibility(View.VISIBLE);
-                binding.interaction.setText(question.getInteraction());
-                binding.button.setVisibility(View.VISIBLE);
+                binding.interactionD.setVisibility(View.VISIBLE);
+                binding.interactionD.setText(question.getInteraction());
+                binding.buttonD.setVisibility(View.VISIBLE);
                 break;
 
 
-            case R.id.button:
+            case R.id.buttonD:
 
-                binding.button.setVisibility(View.INVISIBLE);
-                binding.interaction.setVisibility(View.INVISIBLE);
+                binding.buttonD.setVisibility(View.INVISIBLE);
+                binding.interactionD.setVisibility(View.INVISIBLE);
                 dialog.show();
                 Map<String, String> map = new HashMap<>();
                 map.put(question.getQuestion(), chosen);
@@ -114,7 +116,7 @@ public class BasicQuestions extends AppCompatActivity {
                         currentQuestionIndex++;
                         setNextQuestion();
                         if (currentQuestionIndex == questions.size()) {
-                            Intent intent = new Intent(BasicQuestions.this, HomePage.class);
+                            Intent intent = new Intent(BasicQuestions.this, EmotionRatingBarActivity.class);
                             startActivity(intent);
                             finishAffinity();
                         }

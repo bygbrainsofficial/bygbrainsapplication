@@ -1,6 +1,7 @@
 package com.sahilhans0605.bygbrains.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.sahilhans0605.bygbrains.R;
+import com.sahilhans0605.bygbrains.activity.DisordersQuestionsAnxiety;
 import com.sahilhans0605.bygbrains.modelClass.CategoryModel;
 
 import java.util.ArrayList;
@@ -38,6 +40,17 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         CategoryModel model = categoryModels.get(position);
         holder.textView.setText(model.getCategoryName());
         Glide.with(context).load(model.getCategoryImage()).into(holder.imageView);
+        if (holder.textView.getText().toString().equals("Anxiety")) {
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, DisordersQuestionsAnxiety.class);
+                    context.startActivity(intent);
+                }
+            });
+        }
+
+
     }
 
     @Override

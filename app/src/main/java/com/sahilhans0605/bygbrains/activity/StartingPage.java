@@ -22,7 +22,7 @@ public class StartingPage extends AppCompatActivity {
         setContentView(binding.getRoot());
         user = FirebaseAuth.getInstance().getCurrentUser();
         if(user!=null){
-            Intent intent = new Intent(StartingPage.this, HomePage.class);
+            Intent intent = new Intent(StartingPage.this, EmotionRatingBarActivity.class);
             startActivity(intent);
             finishAffinity();
         }

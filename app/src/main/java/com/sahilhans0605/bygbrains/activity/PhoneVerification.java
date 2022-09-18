@@ -56,7 +56,7 @@ public class PhoneVerification extends AppCompatActivity {
         binding.wecomeName.setText("WELCOME " + name);
         binding.verifyPhone.setText("Verify " + phoneNumber);
 
-        User users = new User(name, age, gender, phoneNumber, FirebaseAuth.getInstance().getCurrentUser().getUid());
+        User users = new User(name, age, gender, phoneNumber, FirebaseAuth.getInstance().getUid());
 
         binding.verifybutton.setOnClickListener(new View.OnClickListener() {
             @Override
