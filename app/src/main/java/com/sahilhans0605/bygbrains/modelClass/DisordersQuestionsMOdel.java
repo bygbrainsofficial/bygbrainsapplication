@@ -1,26 +1,26 @@
 package com.sahilhans0605.bygbrains.modelClass;
 
-public class Questions {
+public class DisordersQuestionsMOdel {
     String Question;
     String option1;
     String option2;
     String option3;
     String option4;
     String option5;
+    String option6;
+
+    String[] right;
+    String[] wrong;
     String interaction;
 
-    public String getId() {
-        return id;
+    public String getOption6() {
+        return option6;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setOption6(String option6) {
+        this.option6 = option6;
     }
 
-    String id;
-
-    public Questions() {
-    }
 
     public String getQuestion() {
         return Question;
@@ -70,22 +70,44 @@ public class Questions {
         this.option5 = option5;
     }
 
+    public String[] getRight() {
+        return right;
+    }
+
+    public void setRight(String[] right) {
+        this.right = right;
+    }
+
+    public String[] getWrong() {
+        return wrong;
+    }
+
+    public void setWrong(String[] wrong) {
+        this.wrong = wrong;
+    }
+
     public String getInteraction() {
         return interaction;
     }
 
-    public void setInteraction(String ans) {
-        this.interaction = ans;
+    public void setInteraction(String interaction) {
+        this.interaction = interaction;
     }
 
-    public Questions(String question, String option1, String option2, String option3, String option4, String option5, String interaction, String id) {
+    public DisordersQuestionsMOdel() {
+
+    }
+
+    public DisordersQuestionsMOdel(String question, String option1, String option2, String option3, String option4, String option5, String option6, String[] right, String[] wrong, String interaction) {
         Question = question;
         this.option1 = option1;
         this.option2 = option2;
         this.option3 = option3;
         this.option4 = option4;
         this.option5 = option5;
+        this.option6 = option6;
+        this.right = right;
+        this.wrong = wrong;
         this.interaction = interaction;
-        this.id = id;
     }
 }
