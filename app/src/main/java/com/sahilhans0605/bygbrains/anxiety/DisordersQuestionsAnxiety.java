@@ -1,4 +1,4 @@
-package com.sahilhans0605.bygbrains.activity;
+package com.sahilhans0605.bygbrains.anxiety;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,11 +14,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.sahilhans0605.bygbrains.R;
 import com.sahilhans0605.bygbrains.databinding.ActivityDisordersQuestionsBinding;
-import com.sahilhans0605.bygbrains.modelClass.DisordersQuestionsMOdel;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 public class DisordersQuestionsAnxiety extends AppCompatActivity {

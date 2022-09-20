@@ -15,13 +15,16 @@
         android:theme="@style/Theme.BygBrains"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".activity.ResultPageDisorders"
+            android:name=".anxiety.ScheduleSolutionTabs"
+            android:exported="false" />
+        <activity
+            android:name=".anxiety.ResultPageDisorders"
             android:exported="false" />
         <activity
             android:name=".activity.EmotionRatingBarActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.DisordersQuestionsAnxiety"
+            android:name=".anxiety.DisordersQuestionsAnxiety"
             android:exported="false" />
         <activity
             android:name=".activity.PhoneVerificationSignIN"

@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.sahilhans0605.bygbrains.R;
-import com.sahilhans0605.bygbrains.activity.DisordersQuestionsAnxiety;
+import com.sahilhans0605.bygbrains.anxiety.DisordersQuestionsAnxiety;
 import com.sahilhans0605.bygbrains.modelClass.CategoryModel;
 
 import java.util.ArrayList;

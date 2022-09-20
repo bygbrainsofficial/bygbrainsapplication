@@ -1,4 +1,4 @@
-package com.sahilhans0605.bygbrains.modelClass;
+package com.sahilhans0605.bygbrains.anxiety;
 
 public class DisordersQuestionsMOdel {
     String Question;
