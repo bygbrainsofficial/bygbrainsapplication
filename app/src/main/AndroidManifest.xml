@@ -27,13 +27,7 @@
             android:name=".anxiety.DisordersQuestionsAnxiety"
             android:exported="false" />
         <activity
-            android:name=".activity.PhoneVerificationSignIN"
-            android:exported="false" />
-        <activity
             android:name=".activity.UserDetails"
-            android:exported="false" />
-        <activity
-            android:name=".activity.OTPSignIn"
             android:exported="false" />
         <activity
             android:name=".activity.HomePage"
@@ -42,7 +36,7 @@
             android:name=".activity.BasicQuestions"
             android:exported="false" />
         <activity
-            android:name=".activity.PhoneVerification"
+            android:name=".activity.EmailRegistration"
             android:exported="false" />
         <activity
             android:name=".activity.StartingPage"

@@ -21,7 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.sahilhans0605.bygbrains.databinding.ActivityPhoneVerificationBinding;
 import com.sahilhans0605.bygbrains.modelClass.User;
 
-public class PhoneVerification extends AppCompatActivity {
+public class EmailRegistration extends AppCompatActivity {
 
     ActivityPhoneVerificationBinding binding;
     FirebaseAuth auth;
@@ -76,17 +76,17 @@ public class PhoneVerification extends AppCompatActivity {
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if (task.isSuccessful()) {
                                             dialog2.dismiss();
-                                            Intent intent = new Intent(PhoneVerification.this, BasicQuestions.class);
+                                            Intent intent = new Intent(EmailRegistration.this, BasicQuestions.class);
                                             startActivity(intent);
                                             finishAffinity();
                                         } else {
-                                            Toast.makeText(PhoneVerification.this, task.getException().getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(EmailRegistration.this, task.getException().getLocalizedMessage(), Toast.LENGTH_SHORT).show();
                                             dialog2.dismiss();
                                         }
                                     }
                                 });
                             } else {
-                                Toast.makeText(PhoneVerification.this, "Failed!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(EmailRegistration.this, "Failed!", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
