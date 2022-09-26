@@ -15,7 +15,7 @@
         android:theme="@style/Theme.BygBrains"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".EmailLogin"
+            android:name=".PhoneVerification"
             android:exported="false" />
         <activity
             android:name=".anxiety.ScheduleSolutionTabs"
@@ -37,9 +37,6 @@
             android:exported="false" />
         <activity
             android:name=".activity.BasicQuestions"
-            android:exported="false" />
-        <activity
-            android:name=".activity.EmailRegistration"
             android:exported="false" />
         <activity
             android:name=".activity.StartingPage"

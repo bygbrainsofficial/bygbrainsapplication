@@ -34,14 +34,6 @@ public class StartingPage extends AppCompatActivity {
             }
         });
 
-        binding.login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(StartingPage.this,EmailLogin.class);
-                startActivity(intent);
-            }
-        });
-
 //        binding.login.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {

@@ -12,7 +12,7 @@
         android:layout_height="47dp"
         android:layout_marginTop="220dp"
         android:gravity="center"
-        android:text="Get Started"
+        android:text="Getting Started"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="28sp"
@@ -21,19 +21,4 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:gravity="center"
-        android:text="Already A User Login!"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/getStarted" />
 </androidx.constraintlayout.widget.ConstraintLayout>
