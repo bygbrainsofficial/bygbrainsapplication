@@ -15,6 +15,9 @@
         android:theme="@style/Theme.BygBrains"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".EmailLogin"
+            android:exported="false" />
+        <activity
             android:name=".anxiety.ScheduleSolutionTabs"
             android:exported="false" />
         <activity

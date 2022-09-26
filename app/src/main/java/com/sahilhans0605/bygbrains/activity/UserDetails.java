@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.sahilhans0605.bygbrains.R;
+import com.sahilhans0605.bygbrains.databinding.ActivityUserDetailsBinding;
 
 public class UserDetails extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     ActivityUserDetailsBinding binding;
