@@ -1,17 +1,22 @@
 package com.sahilhans0605.bygbrains.activity;
 
-import
-        androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.sahilhans0605.bygbrains.R;
 import com.sahilhans0605.bygbrains.databinding.ActivityBasicQuestionsBinding;
@@ -19,6 +24,7 @@ import com.sahilhans0605.bygbrains.databinding.ActivityBasicQuestionsBinding;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class BasicQuestions extends AppCompatActivity {
     ArrayList<com.sahilhans0605.bygbrains.modelClass.BasicQuestions> questions;
@@ -36,15 +42,18 @@ public class BasicQuestions extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityBasicQuestionsBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
         firebaseFirestore = FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
         user = FirebaseAuth.getInstance().getCurrentUser();
         dialog = new ProgressDialog(this);
         dialog.setMessage("loading...");
         dialog.setCanceledOnTouchOutside(false);
+
         db = FirebaseDatabase.getInstance();
         user = FirebaseAuth.getInstance().getCurrentUser();
+        setContentView(binding.getRoot());
+
+
         questions = new ArrayList<>();
         questions.add(new com.sahilhans0605.bygbrains.modelClass.BasicQuestions("Most of the time you feel?", "Good", "Stressed", "Sad", "Indifferent", "Happy", "Alright!,Let's proceed", "BQ1"));
         questions.add(new com.sahilhans0605.bygbrains.modelClass.BasicQuestions("What profession are you in?", "Student", "Job", "Self work", "HouseWife", "Other", ":) Awesome you are doing a great job!", "BQ2"));
@@ -52,7 +61,9 @@ public class BasicQuestions extends AppCompatActivity {
 
         setNextQuestion();
 
+
     }
+
 
     void setNextQuestion() {
         if (currentQuestionIndex < questions.size()) {

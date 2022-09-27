@@ -34,7 +34,6 @@ public class PhoneVerification extends AppCompatActivity {
     FirebaseUser user;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,17 +51,19 @@ public class PhoneVerification extends AppCompatActivity {
         String age = getIntent().getStringExtra("age");
         String gender = getIntent().getStringExtra("gender");
         verificationId = getIntent().getStringExtra("verificationId");
-
+        String userId = getIntent().getStringExtra("userId");
+        String password = getIntent().getStringExtra("password");
         binding.wecomeName.setText("WELCOME " + name);
         binding.verifyPhone.setText("Verify " + phoneNumber);
 
-        User users = new User(name, age, gender, phoneNumber, FirebaseAuth.getInstance().getUid());
 
         binding.verifybutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (binding.otpEnter.getText().toString().trim().length() < 6) {
                     binding.otpEnter.setError("Please enter a valid OTP!");
+                } else if (binding.otpEnter.getText().toString().isEmpty()) {
+                    binding.otpEnter.setError("It can't be empty!");
                 } else {
                     dialog2.show();
                     PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.getCredential(verificationId, binding.otpEnter.getText().toString().trim());
@@ -71,7 +72,9 @@ public class PhoneVerification extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             binding.verifybutton.setVisibility(View.INVISIBLE);
                             if (task.isSuccessful()) {
-                                firebaseFirestore.collection("users").document(FirebaseAuth.getInstance().getCurrentUser().getUid()).set(users).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                User users = new User(name, age, gender, phoneNumber, task.getResult().getUser().getUid(), userId, password);
+
+                                firebaseFirestore.collection("users").document(userId).set(users).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if (task.isSuccessful()) {
@@ -87,6 +90,7 @@ public class PhoneVerification extends AppCompatActivity {
                                 });
                             } else {
                                 Toast.makeText(PhoneVerification.this, "Failed!", Toast.LENGTH_SHORT).show();
+                                dialog2.dismiss();
                             }
                         }
                     });

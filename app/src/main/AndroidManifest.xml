@@ -15,7 +15,10 @@
         android:theme="@style/Theme.BygBrains"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".PhoneVerification"
+            android:name=".Username_Password"
+            android:exported="false" />
+        <activity
+            android:name=".activity.PhoneVerification"
             android:exported="false" />
         <activity
             android:name=".anxiety.ScheduleSolutionTabs"

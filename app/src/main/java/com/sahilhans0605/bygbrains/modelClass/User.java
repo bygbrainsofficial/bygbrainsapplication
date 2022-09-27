@@ -1,14 +1,16 @@
 package com.sahilhans0605.bygbrains.modelClass;
 
 public class User {
-    private String name, age, gender, number, uid;
+    private String name, age, gender, number, uid, UniqueUserId, password;
 
-    public User(String name, String age, String gender, String number, String uid) {
+    public User(String name, String age, String gender, String number, String uid, String uniqueUserId, String password) {
         this.name = name;
         this.age = age;
         this.gender = gender;
         this.number = number;
         this.uid = uid;
+        UniqueUserId = uniqueUserId;
+        this.password = password;
     }
 
     public User() {
@@ -52,5 +54,21 @@ public class User {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    public String getUniqueUserId() {
+        return UniqueUserId;
+    }
+
+    public void setUniqueUserId(String uniqueUserId) {
+        UniqueUserId = uniqueUserId;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

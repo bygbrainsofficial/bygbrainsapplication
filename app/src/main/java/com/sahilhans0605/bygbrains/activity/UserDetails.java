@@ -37,7 +37,7 @@ public class UserDetails extends AppCompatActivity implements AdapterView.OnItem
         dialog2 = new ProgressDialog(this);
         dialog2.setCanceledOnTouchOutside(false);
         dialog2.setMessage("Fetching OTP...");
-        auth=FirebaseAuth.getInstance();
+        auth = FirebaseAuth.getInstance();
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.genders, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_list_item_activated_1);
         binding.spinner.setAdapter(adapter);
@@ -45,14 +45,21 @@ public class UserDetails extends AppCompatActivity implements AdapterView.OnItem
         binding.getOTP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (binding.userName.getText().toString().equals("") || binding.phoneNumber.getText().toString().equals("") || binding.userAge.getText().toString().equals("") || binding.spinner.toString().equals("Select Gender")) {
-                    Toast.makeText(UserDetails.this, "All fields are required", Toast.LENGTH_SHORT).show();
+                if (binding.userId.getText().toString().isEmpty()) {
+                    binding.userId.setError("Required!");
+
+                } else if (binding.password.getText().toString().isEmpty()) {
+                    binding.password.setError("Required!");
+                } else if (binding.password.getText().toString().length() < 6) {
+                    binding.password.setError("Use a stronger password!");
+                } else if (binding.phoneNumber.getText().toString().equals("")) {
+                    binding.phoneNumber.setError("Please enter your number here...");
                 } else if (binding.phoneNumber.getText().toString().length() < 10) {
                     binding.phoneNumber.setError("Invalid phone number");
                 } else {
                     dialog2.show();
                     PhoneAuthOptions options = PhoneAuthOptions.newBuilder(auth)
-                            .setPhoneNumber(binding.countryCodePicker.getSelectedCountryCodeWithPlus()+binding.phoneNumber.getText().toString().trim())
+                            .setPhoneNumber(binding.countryCodePicker.getSelectedCountryCodeWithPlus() + binding.phoneNumber.getText().toString().trim())
                             .setTimeout(60L, TimeUnit.SECONDS)
                             .setActivity(UserDetails.this).setCallbacks(new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
                                 @Override
@@ -79,6 +86,8 @@ public class UserDetails extends AppCompatActivity implements AdapterView.OnItem
                                     intent.putExtra("gender", choice);
                                     intent.putExtra("verificationId", verificationId);
                                     intent.putExtra("phoneNumber", binding.countryCodePicker.getSelectedCountryCodeWithPlus() + binding.phoneNumber.getText().toString().trim());
+                                    intent.putExtra("userId", binding.userId.getText().toString());
+                                    intent.putExtra("password", binding.password.getText().toString());
                                     startActivity(intent);
 
                                 }
@@ -86,6 +95,25 @@ public class UserDetails extends AppCompatActivity implements AdapterView.OnItem
                     PhoneAuthProvider.verifyPhoneNumber(options);
 
 
+                }
+
+            }
+        });
+        binding.nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (binding.userName.getText().toString().equals("") || binding.userAge.getText().toString().equals("") || binding.spinner.toString().equals("Select Gender")) {
+                    Toast.makeText(UserDetails.this, "All fields are required", Toast.LENGTH_SHORT).show();
+                } else {
+                    binding.userName.setVisibility(View.INVISIBLE);
+                    binding.userAge.setVisibility(View.INVISIBLE);
+                    binding.spinner.setVisibility(View.INVISIBLE);
+                    binding.countryCodePicker.setVisibility(View.VISIBLE);
+                    binding.textlets.setVisibility(View.VISIBLE);
+                    binding.phoneNumber.setVisibility(View.VISIBLE);
+                    binding.nextButton.setVisibility(View.INVISIBLE);
+                    binding.linearLayout.setVisibility(View.VISIBLE);
+                    binding.getOTP.setVisibility(View.VISIBLE);
                 }
             }
         });
