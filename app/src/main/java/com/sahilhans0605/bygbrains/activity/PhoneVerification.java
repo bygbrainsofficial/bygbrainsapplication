@@ -1,10 +1,12 @@
 package com.sahilhans0605.bygbrains.activity;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -21,6 +23,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.sahilhans0605.bygbrains.databinding.ActivityPhoneVerificationBinding;
 import com.sahilhans0605.bygbrains.modelClass.User;
 
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
+
 public class PhoneVerification extends AppCompatActivity {
 
     ActivityPhoneVerificationBinding binding;
@@ -32,8 +37,10 @@ public class PhoneVerification extends AppCompatActivity {
     long timeLeftInMilliSeconds = 60000;
     FirebaseFirestore firebaseFirestore;
     FirebaseUser user;
+    String password;
 
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,9 +59,10 @@ public class PhoneVerification extends AppCompatActivity {
         String gender = getIntent().getStringExtra("gender");
         verificationId = getIntent().getStringExtra("verificationId");
         String userId = getIntent().getStringExtra("userId");
-        String password = getIntent().getStringExtra("password");
+        password = getIntent().getStringExtra("password");
         binding.wecomeName.setText("WELCOME " + name);
         binding.verifyPhone.setText("Verify " + phoneNumber);
+        password = EncryptMessage(password);
 
 
         binding.verifybutton.setOnClickListener(new View.OnClickListener() {
@@ -98,6 +106,14 @@ public class PhoneVerification extends AppCompatActivity {
             }
         });
 
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private String EncryptMessage(String myMsg) {
+        byte[] encryptedMsg = new byte[0];
+        encryptedMsg = myMsg.getBytes(StandardCharsets.UTF_8);
+        String myEncodeMsg = Base64.getEncoder().encodeToString(encryptedMsg);
+        return myEncodeMsg;
     }
 
 

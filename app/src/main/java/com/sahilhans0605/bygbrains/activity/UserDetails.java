@@ -1,6 +1,7 @@
 package com.sahilhans0605.bygbrains.activity;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
@@ -11,12 +12,19 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.sahilhans0605.bygbrains.R;
 import com.sahilhans0605.bygbrains.databinding.ActivityUserDetailsBinding;
 
@@ -28,6 +36,9 @@ public class UserDetails extends AppCompatActivity implements AdapterView.OnItem
     FirebaseAuth auth;
     ProgressDialog dialog2;
     String verificationId;
+    FirebaseFirestore db;
+    boolean flag = true;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +53,7 @@ public class UserDetails extends AppCompatActivity implements AdapterView.OnItem
         adapter.setDropDownViewResource(android.R.layout.simple_list_item_activated_1);
         binding.spinner.setAdapter(adapter);
         binding.spinner.setOnItemSelectedListener(this);
+        db = FirebaseFirestore.getInstance();
         binding.getOTP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,6 +68,11 @@ public class UserDetails extends AppCompatActivity implements AdapterView.OnItem
                     binding.phoneNumber.setError("Please enter your number here...");
                 } else if (binding.phoneNumber.getText().toString().length() < 10) {
                     binding.phoneNumber.setError("Invalid phone number");
+                }
+                if (usernameExists(binding.userId.getText().toString())) {
+                    Toast.makeText(UserDetails.this, "Entered", Toast.LENGTH_LONG).show();
+                    Toast.makeText(UserDetails.this, usernameExists(binding.userId.getText().toString()) + " ", Toast.LENGTH_LONG).show();
+                    binding.userId.setError("Username Already taken!");
                 } else {
                     dialog2.show();
                     PhoneAuthOptions options = PhoneAuthOptions.newBuilder(auth)
@@ -128,4 +145,18 @@ public class UserDetails extends AppCompatActivity implements AdapterView.OnItem
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
+    boolean usernameExists(String userId) {
+        boolean flag1 = true;
+        DocumentReference documentReference = FirebaseFirestore.getInstance().collection("users").document(userId);
+        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+//                This part is left
+            }
+        });
+
+        return false;
+    }
+
 }
