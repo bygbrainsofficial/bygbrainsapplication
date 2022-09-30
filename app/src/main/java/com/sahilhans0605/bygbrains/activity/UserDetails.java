@@ -126,7 +126,6 @@ public class UserDetails extends AppCompatActivity implements AdapterView.OnItem
                     binding.userAge.setVisibility(View.INVISIBLE);
                     binding.spinner.setVisibility(View.INVISIBLE);
                     binding.countryCodePicker.setVisibility(View.VISIBLE);
-                    binding.textlets.setVisibility(View.VISIBLE);
                     binding.phoneNumber.setVisibility(View.VISIBLE);
                     binding.nextButton.setVisibility(View.INVISIBLE);
                     binding.linearLayout.setVisibility(View.VISIBLE);

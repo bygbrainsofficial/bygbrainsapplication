@@ -4,150 +4,285 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.UserDetails">
+    tools:context=".activity.UserDetails"
+    android:background="@color/blue_theme">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    //Header View
+    //contains Json LottieAnimation View and Header Text
+    <RelativeLayout
+        android:id="@+id/header_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:padding="30dp"
+
+        >
+        <RelativeLayout
+            android:id="@+id/animation_view"
+            android:layout_width="170dp"
+            android:layout_height="200dp"
+            android:background="@drawable/animation_view_shape"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="170dp"
+                android:layout_height="200dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/brain" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="170dp"
+            android:layout_height="200dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:fontFamily="@font/inter_bold"
+            android:text="Hello! SignUp to get started"
+            android:textColor="@color/black"
+            android:textSize="30dp" />
+
+    </RelativeLayout>
+
+    //Contains Basic Name and info.
+    <LinearLayout
+        android:id="@+id/user_details"
+        android:layout_width="350dp"
+        android:layout_height="400dp"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/header_view"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userName">
-
-
-        <EditText
-            android:id="@+id/userId"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/card_view"
+        android:elevation="20dp"
+        android:padding="20dp"
+        >
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="30dp"
-            android:hint=" Your Unique Username"
-            android:inputType="textPersonName"
-            android:padding="20dp"
-            android:paddingStart="13dp"
-            android:textSize="15sp" />
+            android:layout_margin="10dp">
 
-        <EditText
-            android:id="@+id/password"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userName"
+                android:drawableStart="@drawable/name_blue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="What should we call you?"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:inputType="textPersonName"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="30dp"
-            android:ems="10"
-            android:hint=" Password"
-            android:inputType="textPassword"
-            android:padding="20dp"
-            android:paddingStart="13dp"
-            android:textSize="15sp"
+            android:layout_margin="10dp">
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/age_blue"
+                android:drawablePadding="0dp"
+                android:hint="Your age"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            />
+
+
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/nextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Go to next step"
+            android:backgroundTint="@color/wooden"
+            android:textAlignment="center"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+            android:padding="2dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Already have an account? LogIn"
+            android:fontFamily="@font/inter_regular"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_gravity="center"
             />
 
 
     </LinearLayout>
 
-    <com.hbb20.CountryCodePicker
-        android:id="@+id/countryCodePicker"
-        android:layout_width="142dp"
-        android:layout_height="45dp"
-        app:ccp_flagBorderColor="@color/black"
-        app:flow_verticalBias="0.5"
+    // Unique username and password
+    // verifying phone number with O
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="350dp"
+        android:layout_height="420dp"
+        android:orientation="vertical"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/phoneNumber"
-        app:layout_constraintStart_toStartOf="@+id/spinner"
-        app:layout_constraintTop_toTopOf="@+id/phoneNumber"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/getOTP"
-        android:layout_width="268dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="116dp"
-        android:backgroundTint="@color/black"
-        android:text="Get otp"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintTop_toBottomOf="@+id/header_view"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-    <EditText
-        android:id="@+id/phoneNumber"
-        android:layout_width="238dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:visibility="gone"
-        android:hint="@string/phone_number"
-        android:inputType="phone"
-        android:maxLength="10"
-        app:layout_constraintEnd_toEndOf="@+id/spinner"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/countryCodePicker"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
-
-    <EditText
-        android:id="@+id/userName"
-        android:layout_width="371dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="76dp"
-        android:ems="10"
-        android:hint="What should we call you?"
-        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.325"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="@drawable/card_view"
+        android:elevation="20dp"
+        android:padding="20dp">
 
-    <EditText
-        android:id="@+id/userAge"
-        android:layout_width="386dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="Your age"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userName" />
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="382dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userAge" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/id_black"
+                android:drawablePadding="0dp"
+                android:hint=" Your Unique Username"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/nextButton"
-        android:layout_width="161dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="76dp"
-        android:text="next"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneNumber" />
 
-    <TextView
-        android:id="@+id/textlets"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:visibility="gone"
-        android:text="Let's create your account!"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/password_black"
+                android:drawablePadding="0dp"
+                android:hint="Enter your Password"
+                android:inputType="textPassword"
+
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/confirm_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/password_black"
+                android:drawablePadding="0dp"
+                android:hint="Re-enter your Password"
+                android:inputType="textPassword"
+
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <EditText
+
+            android:layout_width="238dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="32dp"
+            android:ems="10"
+            android:visibility="gone"
+            android:hint="@string/phone_number"
+            android:inputType="phone"
+            android:maxLength="10"
+            app:layout_constraintEnd_toEndOf="@+id/spinner"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/countryCodePicker"
+            app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/countryCodePicker"
+                android:layout_width="142dp"
+                android:layout_height="45dp"
+                app:ccp_flagBorderColor="@color/black"
+                app:flow_verticalBias="0.5"
+                android:layout_margin="10dp"
+                 />
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/phoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="0dp"
+                    android:hint="Phone Number"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/getOTP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Get OTP"
+            android:backgroundTint="@color/wooden"
+            android:textAlignment="center"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+            android:padding="2dp"/>
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
