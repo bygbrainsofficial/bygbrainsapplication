@@ -7,6 +7,7 @@
     tools:context=".activity.UserDetails"
     android:background="@color/blue_theme">
 
+
     //Header View
     //contains Json LottieAnimation View and Header Text
     <RelativeLayout
@@ -151,6 +152,9 @@
         android:elevation="20dp"
         android:padding="20dp">
 
+
+
+
         <com.google.android.material.textfield.TextInputLayout
             style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
             android:layout_width="match_parent"
@@ -273,6 +277,9 @@
             android:layout_marginEnd="5dp"
             android:layout_marginStart="5dp"
             android:padding="2dp"/>
+
+
+
 
 
 
