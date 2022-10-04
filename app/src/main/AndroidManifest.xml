@@ -14,7 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BygBrains"
         android:usesCleartextTraffic="true">
-
+        <activity
+            android:name=".LoginUserIdActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.PhoneVerification"
             android:exported="false" />
