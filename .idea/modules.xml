@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/bygbrainsofficialapp.iml" filepath="$PROJECT_DIR$/.idea/bygbrainsofficialapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BygBrains.iml" filepath="$PROJECT_DIR$/.idea/modules/BygBrains.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/BygBrains.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/BygBrains.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/BygBrains.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/BygBrains.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/BygBrains.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/BygBrains.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/BygBrains.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/BygBrains.app.unitTest.iml" />
     </modules>
   </component>
 </project>

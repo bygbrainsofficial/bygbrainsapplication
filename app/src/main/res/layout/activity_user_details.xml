@@ -7,9 +7,8 @@
     tools:context=".activity.UserDetails"
     android:background="@color/blue_theme">
 
-
-    //Header View
-    //contains Json LottieAnimation View and Header Text
+<!--    //Header View-->
+<!--    //contains Json LottieAnimation View and Header Text-->
     <RelativeLayout
         android:id="@+id/header_view"
         android:layout_width="match_parent"
@@ -52,7 +51,7 @@
 
     </RelativeLayout>
 
-    //Contains Basic Name and info.
+<!--    //Contains Basic Name and info.-->
     <LinearLayout
         android:id="@+id/user_details"
         android:layout_width="350dp"
@@ -93,8 +92,8 @@
                 android:id="@+id/userAge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/age_blue"
                 android:drawablePadding="0dp"
+                android:drawableStart="@drawable/password_black"
                 android:hint="Your age"
                 android:textAlignment="center"
                 android:gravity="center"
@@ -137,8 +136,8 @@
 
     </LinearLayout>
 
-    // Unique username and password
-    // verifying phone number with O
+<!--    // Unique username and password-->
+<!--    // verifying phone number with O-->
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="350dp"
@@ -151,9 +150,6 @@
         android:background="@drawable/card_view"
         android:elevation="20dp"
         android:padding="20dp">
-
-
-
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
@@ -244,7 +240,7 @@
                 app:ccp_flagBorderColor="@color/black"
                 app:flow_verticalBias="0.5"
                 android:layout_margin="10dp"
-                 />
+                />
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
                 android:layout_width="match_parent"
@@ -277,9 +273,6 @@
             android:layout_marginEnd="5dp"
             android:layout_marginStart="5dp"
             android:padding="2dp"/>
-
-
-
 
 
 

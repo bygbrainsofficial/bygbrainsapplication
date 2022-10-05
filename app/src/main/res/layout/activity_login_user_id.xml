@@ -20,7 +20,6 @@
 
         >
         <RelativeLayout
-            android:id="@+id/animation_view"
             android:layout_width="170dp"
             android:layout_height="200dp"
             android:background="@drawable/animation_view_shape"
@@ -53,7 +52,6 @@
 
     //id and password
     <LinearLayout
-        android:id="@+id/user_details"
         android:layout_width="350dp"
         android:layout_height="300dp"
         android:orientation="vertical"
@@ -72,7 +70,6 @@
             android:layout_margin="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/userName"
                 android:drawableStart="@drawable/id_black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -90,7 +87,6 @@
             android:layout_margin="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/userAge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/password_black"
@@ -112,7 +108,6 @@
             android:layout_gravity="end"
             />
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-            android:id="@+id/logIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login"

@@ -68,12 +68,11 @@ public class UserDetails extends AppCompatActivity implements AdapterView.OnItem
                     binding.phoneNumber.setError("Please enter your number here...");
                 } else if (binding.phoneNumber.getText().toString().length() < 10) {
                     binding.phoneNumber.setError("Invalid phone number");
-                }
-                if (usernameExists(binding.userId.getText().toString())) {
-                    Toast.makeText(UserDetails.this, "Entered", Toast.LENGTH_LONG).show();
-                    Toast.makeText(UserDetails.this, usernameExists(binding.userId.getText().toString()) + " ", Toast.LENGTH_LONG).show();
-                    binding.userId.setError("Username Already taken!");
-                } else {
+                } else if (binding.userId.getText().toString().isEmpty()) {
+                    binding.userId.setError("Required!");
+                } else if (!binding.password.getText().toString().equals(binding.confirmPassword.getText().toString())) {
+                    binding.confirmPassword.setError("Password does not match!");
+                }else {
                     dialog2.show();
                     PhoneAuthOptions options = PhoneAuthOptions.newBuilder(auth)
                             .setPhoneNumber(binding.countryCodePicker.getSelectedCountryCodeWithPlus() + binding.phoneNumber.getText().toString().trim())

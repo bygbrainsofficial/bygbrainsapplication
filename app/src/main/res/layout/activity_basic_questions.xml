@@ -1,132 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
-
-=======
->>>>>>> 2abdaba (BygBrains)
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
-    android:background="#5BA2F4"
     tools:context=".activity.BasicQuestions">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/questionD"
+        android:layout_width="263dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:gravity="center"
+        android:text="Question"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/questionD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
-        android:gravity="center"
-        android:text="Question"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <TextView
         android:id="@+id/interactionD"
-        android:layout_width="match_parent"
+        android:layout_width="263dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginTop="32dp"
         android:gravity="center"
         android:text="Interaction"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="28sp"
-        android:textStyle="italic"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/option5D" />
 
     <TextView
         android:id="@+id/option3D"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/textview"
-        android:backgroundTint="@color/white"
-        android:gravity="center"
-        android:onClick="next"
-        android:text="option3"
-        android:textAlignment="center"
-=======
-    tools:context=".activity.BasicQuestions">
-
-
-    <TextView
-        android:id="@+id/question"
-        android:layout_width="263dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:gravity="center"
-        android:text="Question"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/interaction"
-        android:layout_width="263dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="232dp"
-        android:gravity="center"
-        android:text="Interaction"
-        android:textAlignment="center"
-        android:visibility="invisible"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/option3" />
-
-    <TextView
-        android:id="@+id/option3"
         android:layout_width="263dp"
         android:layout_height="44dp"
-        android:layout_marginTop="44dp"
-        android:gravity="center"
-        android:text="option3"
-        android:onClick="next"
+        android:layout_marginTop="24dp"
         android:background="@drawable/textview"
-        android:textAlignment="center"
         android:backgroundTint="@color/purple_500"
->>>>>>> 2abdaba (BygBrains)
+        android:gravity="center"
+        android:onClick="next"
+        android:text="option3"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-<<<<<<< HEAD
         app:layout_constraintTop_toBottomOf="@+id/option2D" />
 
     <TextView
         android:id="@+id/option5D"
-        android:layout_width="match_parent"
+        android:layout_width="263dp"
         android:layout_height="44dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="28dp"
-        android:layout_marginRight="20dp"
         android:background="@drawable/textview"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/purple_500"
         android:gravity="center"
         android:onClick="next"
         android:text="option5"
@@ -138,67 +71,31 @@
         app:layout_constraintTop_toBottomOf="@+id/option4D" />
 
 
+
     <TextView
         android:id="@+id/option4D"
-        android:layout_width="match_parent"
+        android:layout_width="263dp"
         android:layout_height="44dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="24dp"
-        android:layout_marginRight="20dp"
         android:background="@drawable/textview"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/purple_500"
         android:gravity="center"
         android:onClick="next"
         android:text="option4"
         android:textAlignment="center"
-=======
-        app:layout_constraintTop_toBottomOf="@+id/option2" />
-
-    <TextView
-        android:id="@+id/option5"
-        android:layout_width="263dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="48dp"
-        android:gravity="center"
-        android:text="option5"
-        android:background="@drawable/textview"
-        android:onClick="next"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:backgroundTint="@color/purple_500"
-        android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/option4" />
-
-    <TextView
-        android:id="@+id/option4"
-        android:layout_width="263dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="48dp"
-        android:gravity="center"
-        android:text="option4"
-        android:background="@drawable/textview"
-        android:onClick="next"
-        android:textAlignment="center"
-        android:backgroundTint="@color/purple_500"
->>>>>>> 2abdaba (BygBrains)
         android:textColor="@color/black"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-<<<<<<< HEAD
         app:layout_constraintTop_toBottomOf="@+id/option3D" />
 
     <TextView
         android:id="@+id/option2D"
-        android:layout_width="match_parent"
+        android:layout_width="263dp"
         android:layout_height="44dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="24dp"
-        android:layout_marginRight="20dp"
         android:background="@drawable/textview"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/purple_500"
         android:gravity="center"
         android:onClick="next"
         android:text="option2"
@@ -211,37 +108,6 @@
 
     <TextView
         android:id="@+id/option1D"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/textview"
-        android:backgroundTint="@color/white"
-        android:gravity="center"
-        android:onClick="next"
-        android:text="option1"
-=======
-        app:layout_constraintTop_toBottomOf="@+id/option3" />
-
-    <TextView
-        android:id="@+id/option2"
-        android:layout_width="263dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="52dp"
-        android:text="option2"
-        android:onClick="next"
-        android:background="@drawable/textview"
-        android:textSize="28sp"
-        android:backgroundTint="@color/purple_500"
-        android:textAlignment="center"
-        android:gravity="center"
-        android:textColor="@color/black"        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/option1" />
-
-    <TextView
-        android:id="@+id/option1"
         android:layout_width="263dp"
         android:layout_height="44dp"
         android:layout_marginTop="32dp"
@@ -250,59 +116,25 @@
         android:text="option1"
         android:backgroundTint="@color/purple_500"
         android:onClick="next"
->>>>>>> 2abdaba (BygBrains)
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-<<<<<<< HEAD
         app:layout_constraintTop_toBottomOf="@+id/questionD" />
 
     <Button
         android:id="@+id/buttonD"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginRight="20dp"
-        android:onClick="next"
-        android:text="next"
-        app:cornerRadius="10dp"
-        app:layout_constraintCircleRadius="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/interactionD"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/interactionD"
-        app:layout_constraintTop_toBottomOf="@+id/interactionD" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="23dp"
-        android:layout_marginTop="40dp"
-        android:text="Here are few Questions we wanna ask!"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-=======
-        app:layout_constraintTop_toBottomOf="@+id/question" />
-
-    <Button
-        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:onClick="next"
         android:text="next"
         android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="@+id/interaction"
+        app:layout_constraintEnd_toEndOf="@+id/interactionD"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@+id/interaction"
-        app:layout_constraintTop_toBottomOf="@+id/interaction" />
->>>>>>> 2abdaba (BygBrains)
+        app:layout_constraintStart_toStartOf="@+id/interactionD"
+        app:layout_constraintTop_toBottomOf="@+id/interactionD" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
