@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.hsalf.smileyrating.SmileyRating;
@@ -25,6 +26,7 @@ public class EmotionRatingBarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityEmotionRatingBarBinding.inflate(getLayoutInflater());
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(binding.getRoot());
         binding.smileRating.setTitle(SmileyRating.Type.GREAT, "Awesome");
         binding.smileRating.setFaceColor(SmileyRating.Type.GREAT, Color.BLUE);

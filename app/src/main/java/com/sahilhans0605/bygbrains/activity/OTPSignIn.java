@@ -8,6 +8,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.google.firebase.FirebaseException;
@@ -37,6 +38,7 @@ public class OTPSignIn extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         binding = ActivityOtpsignInBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         auth = FirebaseAuth.getInstance();

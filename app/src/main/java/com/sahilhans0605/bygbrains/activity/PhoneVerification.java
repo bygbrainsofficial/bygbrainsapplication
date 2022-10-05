@@ -10,6 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -44,6 +45,7 @@ public class PhoneVerification extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         binding = ActivityPhoneVerificationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         Toast.makeText(this, "OTP is valid for 60 seconds!", Toast.LENGTH_SHORT).show();

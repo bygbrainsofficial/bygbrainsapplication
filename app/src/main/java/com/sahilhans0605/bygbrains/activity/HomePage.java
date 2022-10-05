@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.WindowManager;
 
 import com.google.android.material.navigation.NavigationBarView;
 import com.sahilhans0605.bygbrains.R;
@@ -21,6 +22,7 @@ public class HomePage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         binding = HomePageBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
