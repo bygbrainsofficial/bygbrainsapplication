@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/main/res/BygBrains" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/main/res/BygBrainsOfficial" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/main/res/BygBrainsPro" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/main/res/BygBrainss" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/main/res/bygbrainsapp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/main/res/bygbrainsapplication" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/main/res/bygbrainsofficialapp" vcs="Git" />
+  </component>
+</project>
