@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "983818406158",
-    "project_id": "bygbrains-eb1ff",
-    "storage_bucket": "bygbrains-eb1ff.appspot.com"
+    "project_number": "314481675749",
+    "firebase_url": "https://bygbrains1-default-rtdb.firebaseio.com",
+    "project_id": "bygbrains1",
+    "storage_bucket": "bygbrains1.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:983818406158:android:a27b6d9bbb0df5d808ef5f",
+        "mobilesdk_app_id": "1:314481675749:android:d2cf331985e07e9f59b30c",
         "android_client_info": {
           "package_name": "com.sahilhans0605.bygbrains"
         }
       },
       "oauth_client": [
         {
-          "client_id": "983818406158-ohe9kvu8b1q3207jncl7tbus4es683ot.apps.googleusercontent.com",
+          "client_id": "314481675749-ouq09828cerlhfg68s5e02uonbtsgrk4.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBzPK-WNpoHvZ7YGcxxlsJoVpaV9d_gchU"
+          "current_key": "AIzaSyDiOCTP5PRpxee57MhxKeoo66IT4ojGpPo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "983818406158-ohe9kvu8b1q3207jncl7tbus4es683ot.apps.googleusercontent.com",
+              "client_id": "314481675749-ouq09828cerlhfg68s5e02uonbtsgrk4.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
