@@ -5,31 +5,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.PhoneVerification">
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:lottie_rawRes="@raw/profile_password_unlock"
+        android:background="@drawable/animation_view_shape"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="20dp"
+        />
 
-    <Button
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/verifybutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/wooden"
         android:text="Verify otp"
-        app:layout_constraintEnd_toEndOf="@+id/otpEnter"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/otpEnterLayout"
         app:layout_constraintHorizontal_bias="0.458"
-        app:layout_constraintStart_toStartOf="@+id/otpEnter"
-        app:layout_constraintTop_toBottomOf="@+id/otpEnter" />
+        app:layout_constraintStart_toStartOf="@+id/otpEnterLayout"
+        app:layout_constraintTop_toBottomOf="@+id/otpEnterLayout" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/otpEnterLayout"
+        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@id/verifyPhone">
+
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/otpEnter"
-        android:layout_width="353dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="52dp"
-        android:ems="10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/age_blue"
+        android:drawablePadding="0dp"
+        android:hint="Your age"
+        android:textAlignment="center"
         android:gravity="center"
-        android:hint="Enter OTP here..."
+        android:textColor="@color/black"
         android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/verifyPhone" />
+        android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <TextView
         android:id="@+id/wecomeName"
@@ -37,26 +61,27 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:text="TextView"
-        android:textAlignment="center"
+        android:textAlignment="viewStart"
         android:textColor="@color/black"
         android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/verifyPhone"
+        android:fontFamily="@font/inter_bold"
+        android:layout_margin="10dp"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/verifyPhone"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toBottomOf="@id/animation_view"
+        />
     <TextView
         android:id="@+id/verifyPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textColor="@color/black"
+        android:text="Enter the OTP received on given number "
         android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/otpEnter"
-        app:layout_constraintStart_toStartOf="@+id/otpEnter"
-        app:layout_constraintTop_toBottomOf="@+id/wecomeName" />
+        android:fontFamily="@font/inter_bold"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/wecomeName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

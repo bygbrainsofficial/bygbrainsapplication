@@ -18,7 +18,7 @@
             android:name=".activity.LoginUserIdActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.PhoneVerification"
+            android:name=".activity.StartingPage"
             android:exported="false" />
         <activity
             android:name=".anxiety.ScheduleSolutionTabs"
@@ -42,7 +42,7 @@
             android:name=".activity.BasicQuestions"
             android:exported="false" />
         <activity
-            android:name=".activity.StartingPage"
+            android:name=".activity.PhoneVerification"
             android:exported="true"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
