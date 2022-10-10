@@ -18,7 +18,14 @@ public class ResultPageDisorders extends AppCompatActivity {
         binding = ActivityResultPageDisordersBinding.inflate(getLayoutInflater());
 
         setContentView(binding.getRoot());
-        int result = getIntent().getIntExtra("yes",3);
+        int result = getIntent().getIntExtra("yes", 3);
+        if (result >= 0 && result <= 11) {
+            binding.result.setText("low anxiety");
+        } else if (result >= 12 && result <= 17) {
+            binding.result.setText("Moderate Anxiety");
+        } else if (result >= 18) {
+            binding.result.setText("potentially concerning levels of anxiety");
+        }
         binding.speedView.speedTo(result);
 
     }

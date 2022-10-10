@@ -1,4 +1,4 @@
-package com.sahilhans0605.bygbrains.anxiety;
+package com.sahilhans0605.bygbrains.stress;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,14 +12,15 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.sahilhans0605.bygbrains.R;
+import com.sahilhans0605.bygbrains.databinding.ActivityDisordersQuestionsAngerBinding;
 import com.sahilhans0605.bygbrains.databinding.ActivityDisordersQuestionsBinding;
 import com.sahilhans0605.bygbrains.modelClass.DisordersQuestionsMOdel;
 
 import java.util.ArrayList;
 
-public class DisordersQuestionsAnxiety extends AppCompatActivity {
+public class DisordersQuestionsStress extends AppCompatActivity {
 
-    ActivityDisordersQuestionsBinding binding;
+    ActivityDisordersQuestionsAngerBinding binding;
     int currentQuestionIndex = 0;
     ArrayList<DisordersQuestionsMOdel> questions;
     FirebaseFirestore firebaseFirestore;
@@ -32,7 +33,7 @@ public class DisordersQuestionsAnxiety extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityDisordersQuestionsBinding.inflate(getLayoutInflater());
+        binding = ActivityDisordersQuestionsAngerBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         firebaseFirestore = FirebaseFirestore.getInstance();
         dialog = new ProgressDialog(this);
@@ -41,17 +42,16 @@ public class DisordersQuestionsAnxiety extends AppCompatActivity {
         db = FirebaseDatabase.getInstance();
         user = FirebaseAuth.getInstance().getCurrentUser();
         questions = new ArrayList<>();
-        questions.add(new DisordersQuestionsMOdel("Dizzy or lightheaded", "Not At All ", "Mildly but it didn’t bother me much", "Moderately-it wasn’t pleasant at times", "Severely-It bothered me a lot", "", ""));
-        questions.add(new DisordersQuestionsMOdel("Unable to relax", "Not At All ", "Mildly but it didn’t bother me much", "Moderately-it wasn’t pleasant at times", "Severely-It bothered me a lot", "", ""));
-        questions.add(new DisordersQuestionsMOdel("Shaky Body/Unsteady", "Not At All ", "Mildly but it didn’t bother me much", "Moderately-it wasn’t pleasant at times", "Severely-It bothered me a lot", "", ""));
-        questions.add(new DisordersQuestionsMOdel("Hot/cold sweats", "Not At All ", "Mildly but it didn’t bother me much", "Moderately-it wasn’t pleasant at times", "Severely-It bothered me a lot", "", ""));
-        questions.add(new DisordersQuestionsMOdel("Face flushed", "Not At All ", "Mildly but it didn’t bother me much", "Moderately-it wasn’t pleasant at times", "Severely-It bothered me a lot", "", ""));
-        questions.add(new DisordersQuestionsMOdel("Difficulty in breathing", "Not At All ", "Mildly but it didn’t bother me much", "Moderately-it wasn’t pleasant at times", "Severely-It bothered me a lot", "", ""));
-        questions.add(new DisordersQuestionsMOdel("Heart pounding/racing", "Not At All ", "Mildly but it didn’t bother me much", "Moderately-it wasn’t pleasant at times", "Severely-It bothered me a lot", "", ""));
-        questions.add(new DisordersQuestionsMOdel("Terrified or afraid", "Not At All ", "Mildly but it didn’t bother me much", "Moderately-it wasn’t pleasant at times", "Severely-It bothered me a lot", "", ""));
-        questions.add(new DisordersQuestionsMOdel("Nervous", "Not At All ", "Mildly but it didn’t bother me much", "Moderately-it wasn’t pleasant at times", "Severely-It bothered me a lot", "", ""));
-        questions.add(new DisordersQuestionsMOdel("Feeling of choking", "Not At All ", "Mildly but it didn’t bother me much", "Moderately-it wasn’t pleasant at times", "Severely-It bothered me a lot", "", ""));
-        questions.add(new DisordersQuestionsMOdel("Fear of losing control", "Not At All ", "Mildly but it didn’t bother me much", "Moderately-it wasn’t pleasant at times", "Severely-It bothered me a lot", "", ""));
+        questions.add(new DisordersQuestionsMOdel("In the last month, how often have you been upset because of something that happened unexpectedly?", "Never ", "Almost Never", "Sometimes", "Fairly Often", "Very Often", ""));
+        questions.add(new DisordersQuestionsMOdel("In the last month, how often have you felt that you were unable to control the important things in your life?", "Never ", "Almost Never", "Sometimes", "Fairly Often", "Very Often", ""));
+        questions.add(new DisordersQuestionsMOdel("In the last month, how often have you felt nervous and stressed?", "Never ", "Almost Never", "Sometimes", "Fairly Often", "Very Often", ""));
+        questions.add(new DisordersQuestionsMOdel("In the last month, how often have you felt confident about your ability to handle your personal problems?", "Very Often","Fairly Often","Sometimes","Almost Never","never", ""));
+        questions.add(new DisordersQuestionsMOdel("In the last month, how often have you felt that things were going your way?", "Very Often","Fairly Often","Sometimes","Almost Never","never", ""));
+        questions.add(new DisordersQuestionsMOdel("In the last month, how often have you found that you could not cope with all the things that you had to do?", "Never ", "Almost Never", "Sometimes", "Fairly Often", "Very Often", ""));
+        questions.add(new DisordersQuestionsMOdel("In the last month, how often have you been able to control irritations in your life?", "Very Often","Fairly Often","Sometimes","Almost Never","never", ""));
+        questions.add(new DisordersQuestionsMOdel("In the last month, how often have you felt that you were on top of things?", "Very Often","Fairly Often","Sometimes","Almost Never","never", ""));
+        questions.add(new DisordersQuestionsMOdel("In the last month, how often have you been angered because of things that happened that were outside of your control?", "Never ", "Almost Never", "Sometimes", "Fairly Often", "Very Often", ""));
+        questions.add(new DisordersQuestionsMOdel("In the last month, how often have you felt difficulties were piling up so high that you could not overcome them?", "Never ", "Almost Never", "Sometimes", "Fairly Often", "Very Often", ""));
 
         setNextQuestion();
     }
@@ -101,7 +101,7 @@ public class DisordersQuestionsAnxiety extends AppCompatActivity {
 
     void lastQuestion() {
 
-        Intent intent = new Intent(DisordersQuestionsAnxiety.this, ResultPageDisorders.class);
+        Intent intent = new Intent(DisordersQuestionsStress.this, ResultPageStress.class);
         intent.putExtra("yes", yes);
         startActivity(intent);
         finish();

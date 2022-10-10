@@ -15,10 +15,66 @@
         android:theme="@style/Theme.BygBrains"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".stress.ResultPageStress"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".sleep.ResultPageSleep"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".depression.ResultPageDepression"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".anger.ResultPageAnger"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".stress.DisordersQuestionsStress"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".sleep.DisordersQuestionsSleep"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".depression.DisordersQuestionsDepression"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".anger.DisordersQuestionsAnger"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".activity.LoginUserIdActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.StartingPage"
+            android:name=".activity.PhoneVerification"
             android:exported="false" />
         <activity
             android:name=".anxiety.ScheduleSolutionTabs"
@@ -36,13 +92,13 @@
             android:name=".activity.UserDetails"
             android:exported="false" />
         <activity
-            android:name=".activity.HomePage"
+            android:name=".activity.StartingPage"
             android:exported="false" />
         <activity
             android:name=".activity.BasicQuestions"
             android:exported="false" />
         <activity
-            android:name=".activity.PhoneVerification"
+            android:name=".activity.HomePage"
             android:exported="true"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>

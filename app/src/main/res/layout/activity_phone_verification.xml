@@ -75,7 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Enter the OTP received on given number "
-        android:textSize="20sp"
+        android:textSize="28sp"
         android:fontFamily="@font/inter_bold"
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/wecomeName"

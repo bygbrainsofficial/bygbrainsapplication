@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/home"
@@ -8,12 +8,14 @@
         android:title="Home" />
 
     <item
+        android:id="@+id/profile"
+        android:icon="@drawable/socialmedia"
+        android:title="Social Media" />
+
+    <item
         android:id="@+id/calendar"
         android:icon="@drawable/calendaricon"
         android:title="Calendar" />
 
-    <item
-        android:id="@+id/profile"
-        android:icon="@drawable/profileicon"
-        android:title="Profile" />
+
 </menu>

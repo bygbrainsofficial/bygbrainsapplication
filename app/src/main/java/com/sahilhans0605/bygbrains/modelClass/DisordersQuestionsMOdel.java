@@ -1,4 +1,4 @@
-package com.sahilhans0605.bygbrains.anxiety;
+package com.sahilhans0605.bygbrains.modelClass;
 
 public class DisordersQuestionsMOdel {
     String Question;
@@ -9,8 +9,6 @@ public class DisordersQuestionsMOdel {
     String option5;
     String option6;
 
-    String[] right;
-    String[] wrong;
     String interaction;
 
     public String getOption6() {
@@ -70,21 +68,6 @@ public class DisordersQuestionsMOdel {
         this.option5 = option5;
     }
 
-    public String[] getRight() {
-        return right;
-    }
-
-    public void setRight(String[] right) {
-        this.right = right;
-    }
-
-    public String[] getWrong() {
-        return wrong;
-    }
-
-    public void setWrong(String[] wrong) {
-        this.wrong = wrong;
-    }
 
     public String getInteraction() {
         return interaction;
@@ -98,7 +81,7 @@ public class DisordersQuestionsMOdel {
 
     }
 
-    public DisordersQuestionsMOdel(String question, String option1, String option2, String option3, String option4, String option5, String option6, String[] right, String[] wrong, String interaction) {
+    public DisordersQuestionsMOdel(String question, String option1, String option2, String option3, String option4, String option5, String option6) {
         Question = question;
         this.option1 = option1;
         this.option2 = option2;
@@ -106,8 +89,6 @@ public class DisordersQuestionsMOdel {
         this.option4 = option4;
         this.option5 = option5;
         this.option6 = option6;
-        this.right = right;
-        this.wrong = wrong;
         this.interaction = interaction;
     }
 }

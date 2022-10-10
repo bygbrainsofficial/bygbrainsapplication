@@ -1,4 +1,4 @@
-package com.sahilhans0605.bygbrains.anxiety;
+package com.sahilhans0605.bygbrains.sleep;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,14 +12,16 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.sahilhans0605.bygbrains.R;
+import com.sahilhans0605.bygbrains.databinding.ActivityDisordersQuestionsAngerBinding;
 import com.sahilhans0605.bygbrains.databinding.ActivityDisordersQuestionsBinding;
+import com.sahilhans0605.bygbrains.databinding.ActivityDisordersQuestionsSleepBinding;
 import com.sahilhans0605.bygbrains.modelClass.DisordersQuestionsMOdel;
 
 import java.util.ArrayList;
 
-public class DisordersQuestionsAnxiety extends AppCompatActivity {
+public class DisordersQuestionsSleep extends AppCompatActivity {
 
-    ActivityDisordersQuestionsBinding binding;
+    ActivityDisordersQuestionsSleepBinding binding;
     int currentQuestionIndex = 0;
     ArrayList<DisordersQuestionsMOdel> questions;
     FirebaseFirestore firebaseFirestore;
@@ -32,7 +34,7 @@ public class DisordersQuestionsAnxiety extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityDisordersQuestionsBinding.inflate(getLayoutInflater());
+        binding = ActivityDisordersQuestionsSleepBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         firebaseFirestore = FirebaseFirestore.getInstance();
         dialog = new ProgressDialog(this);
@@ -41,17 +43,15 @@ public class DisordersQuestionsAnxiety extends AppCompatActivity {
         db = FirebaseDatabase.getInstance();
         user = FirebaseAuth.getInstance().getCurrentUser();
         questions = new ArrayList<>();
-        questions.add(new DisordersQuestionsMOdel("Dizzy or lightheaded", "Not At All ", "Mildly but it didn’t bother me much", "Moderately-it wasn’t pleasant at times", "Severely-It bothered me a lot", "", ""));
-        questions.add(new DisordersQuestionsMOdel("Unable to relax", "Not At All ", "Mildly but it didn’t bother me much", "Moderately-it wasn’t pleasant at times", "Severely-It bothered me a lot", "", ""));
-        questions.add(new DisordersQuestionsMOdel("Shaky Body/Unsteady", "Not At All ", "Mildly but it didn’t bother me much", "Moderately-it wasn’t pleasant at times", "Severely-It bothered me a lot", "", ""));
-        questions.add(new DisordersQuestionsMOdel("Hot/cold sweats", "Not At All ", "Mildly but it didn’t bother me much", "Moderately-it wasn’t pleasant at times", "Severely-It bothered me a lot", "", ""));
-        questions.add(new DisordersQuestionsMOdel("Face flushed", "Not At All ", "Mildly but it didn’t bother me much", "Moderately-it wasn’t pleasant at times", "Severely-It bothered me a lot", "", ""));
-        questions.add(new DisordersQuestionsMOdel("Difficulty in breathing", "Not At All ", "Mildly but it didn’t bother me much", "Moderately-it wasn’t pleasant at times", "Severely-It bothered me a lot", "", ""));
-        questions.add(new DisordersQuestionsMOdel("Heart pounding/racing", "Not At All ", "Mildly but it didn’t bother me much", "Moderately-it wasn’t pleasant at times", "Severely-It bothered me a lot", "", ""));
-        questions.add(new DisordersQuestionsMOdel("Terrified or afraid", "Not At All ", "Mildly but it didn’t bother me much", "Moderately-it wasn’t pleasant at times", "Severely-It bothered me a lot", "", ""));
-        questions.add(new DisordersQuestionsMOdel("Nervous", "Not At All ", "Mildly but it didn’t bother me much", "Moderately-it wasn’t pleasant at times", "Severely-It bothered me a lot", "", ""));
-        questions.add(new DisordersQuestionsMOdel("Feeling of choking", "Not At All ", "Mildly but it didn’t bother me much", "Moderately-it wasn’t pleasant at times", "Severely-It bothered me a lot", "", ""));
-        questions.add(new DisordersQuestionsMOdel("Fear of losing control", "Not At All ", "Mildly but it didn’t bother me much", "Moderately-it wasn’t pleasant at times", "Severely-It bothered me a lot", "", ""));
+        questions.add(new DisordersQuestionsMOdel(" How long does it take you to fall asleep?", "0-15 minutes", "16-30minutes", "31-45 minutes", "46-60 minutes", ">60 minutes", ""));
+        questions.add(new DisordersQuestionsMOdel("If you wake up one or more times during the night, estimate how long you are awake in total? (add up all the times you are awake.)", "0-15 minutes", "16-30minutes", "31-45 minutes", "46-60 minutes", ">60 minutes", ""));
+        questions.add(new DisordersQuestionsMOdel("If your final wake-up time occurs before you intend to wake up, how much earlier is this", "I don’t wake up too early/up to 15 min. early", "16-30minutes", "31-45 minutes", "46-60 minutes", ">60 minutes", ""));
+        questions.add(new DisordersQuestionsMOdel("How would you rate your sleep quality?", "Very Good", "Good", "Average", "Poor", "Very Poor", ""));
+        questions.add(new DisordersQuestionsMOdel("How many nights a week do you have a problem with your sleep?", "0-1 ", "2", "3", "4", "5-7", ""));
+        questions.add(new DisordersQuestionsMOdel("Consider the past month, to what extent has poor sleep….Affected your productivity, concentration, or ability to stay awake?", "Not at all", "A little", "Somewhat", "Much", "Very Much", ""));
+        questions.add(new DisordersQuestionsMOdel("Affected energy, relationships, or mood?", "Not at all", "A little", "Somewhat", "Much", "Very Much", ""));
+        questions.add(new DisordersQuestionsMOdel("Troubled you in general?", "Not at all", "A little", "Somewhat", "Much", "Very Much", ""));
+        questions.add(new DisordersQuestionsMOdel("How long have you had a problem with your sleep?", "I don’t have a problem/<month", "1-2 Months", "3-6 months", "7-12 months", ">1 year", ""));
 
         setNextQuestion();
     }
@@ -101,7 +101,7 @@ public class DisordersQuestionsAnxiety extends AppCompatActivity {
 
     void lastQuestion() {
 
-        Intent intent = new Intent(DisordersQuestionsAnxiety.this, ResultPageDisorders.class);
+        Intent intent = new Intent(DisordersQuestionsSleep.this, ResultPageSleep.class);
         intent.putExtra("yes", yes);
         startActivity(intent);
         finish();
