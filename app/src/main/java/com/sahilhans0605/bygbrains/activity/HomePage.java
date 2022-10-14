@@ -13,7 +13,7 @@ import com.sahilhans0605.bygbrains.R;
 import com.sahilhans0605.bygbrains.databinding.HomePageBinding;
 import com.sahilhans0605.bygbrains.fragments.CalendarFragment;
 import com.sahilhans0605.bygbrains.fragments.HomeFragment;
-import com.sahilhans0605.bygbrains.fragments.ProfileFragment;
+import com.sahilhans0605.bygbrains.fragments.SocialMedia;
 
 public class HomePage extends AppCompatActivity {
 
@@ -42,7 +42,7 @@ public class HomePage extends AppCompatActivity {
                         transaction.replace(R.id.frameLayout, new CalendarFragment());
                         break;
                     case R.id.profile:
-                        transaction.replace(R.id.frameLayout,new ProfileFragment());
+                        transaction.replace(R.id.frameLayout,new SocialMedia());
                         break;
                 }
                 transaction.commit();

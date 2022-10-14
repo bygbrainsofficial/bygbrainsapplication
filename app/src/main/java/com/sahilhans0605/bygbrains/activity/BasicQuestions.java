@@ -86,38 +86,7 @@ public class BasicQuestions extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.option1D:
                 chosen = binding.option1D.getText().toString();
-                break;
-            case R.id.option2D:
-                chosen = binding.option2D.getText().toString();
-                break;
-            case R.id.option3D:
-                chosen = binding.option3D.getText().toString();
-                break;
-            case R.id.option4D:
-                chosen = binding.option4D.getText().toString();
-                break;
-            case R.id.option5D:
-                chosen = binding.option5D.getText().toString();
-                break;
-        }
-        switch (view.getId()) {
 
-            case R.id.option1D:
-            case R.id.option2D:
-            case R.id.option3D:
-            case R.id.option4D:
-            case R.id.option5D:
-                binding.interactionD.setVisibility(View.VISIBLE);
-                binding.interactionD.setText(question.getInteraction());
-                binding.buttonD.setVisibility(View.VISIBLE);
-                break;
-
-
-            case R.id.buttonD:
-
-
-                binding.buttonD.setVisibility(View.INVISIBLE);
-                binding.interactionD.setVisibility(View.INVISIBLE);
                 dialog.show();
                 Map<String, String> map = new HashMap<>();
                 map.put(question.getQuestion(), chosen);
@@ -138,6 +107,95 @@ public class BasicQuestions extends AppCompatActivity {
 
 
                 break;
+            case R.id.option2D:
+                chosen = binding.option2D.getText().toString();
+                dialog.show();
+                map = new HashMap<>();
+                map.put(question.getQuestion(), chosen);
+                db.getReference().child("BasicQuestions").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(question.getId()).setValue(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        dialog.dismiss();
+//                        Toast.makeText(BasicQuestions.this, "Added!!!!", Toast.LENGTH_SHORT).show();
+                        currentQuestionIndex++;
+                        setNextQuestion();
+                        if (currentQuestionIndex == questions.size()) {
+                            Intent intent = new Intent(BasicQuestions.this, EmotionRatingBarActivity.class);
+                            startActivity(intent);
+                            finishAffinity();
+                        }
+                    }
+                });
+
+
+                break;
+            case R.id.option3D:
+                chosen = binding.option3D.getText().toString();
+                dialog.show();
+                map = new HashMap<>();
+                map.put(question.getQuestion(), chosen);
+                db.getReference().child("BasicQuestions").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(question.getId()).setValue(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        dialog.dismiss();
+//                        Toast.makeText(BasicQuestions.this, "Added!!!!", Toast.LENGTH_SHORT).show();
+                        currentQuestionIndex++;
+                        setNextQuestion();
+                        if (currentQuestionIndex == questions.size()) {
+                            Intent intent = new Intent(BasicQuestions.this, EmotionRatingBarActivity.class);
+                            startActivity(intent);
+                            finishAffinity();
+                        }
+                    }
+                });
+
+
+                break;
+            case R.id.option4D:
+                chosen = binding.option4D.getText().toString();
+                dialog.show();
+                map = new HashMap<>();
+                map.put(question.getQuestion(), chosen);
+                db.getReference().child("BasicQuestions").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(question.getId()).setValue(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        dialog.dismiss();
+//                        Toast.makeText(BasicQuestions.this, "Added!!!!", Toast.LENGTH_SHORT).show();
+                        currentQuestionIndex++;
+                        setNextQuestion();
+                        if (currentQuestionIndex == questions.size()) {
+                            Intent intent = new Intent(BasicQuestions.this, EmotionRatingBarActivity.class);
+                            startActivity(intent);
+                            finishAffinity();
+                        }
+                    }
+                });
+
+
+                break;
+            case R.id.option5D:
+                chosen = binding.option5D.getText().toString();
+                dialog.show();
+                map = new HashMap<>();
+                map.put(question.getQuestion(), chosen);
+                db.getReference().child("BasicQuestions").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(question.getId()).setValue(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        dialog.dismiss();
+//                        Toast.makeText(BasicQuestions.this, "Added!!!!", Toast.LENGTH_SHORT).show();
+                        currentQuestionIndex++;
+                        setNextQuestion();
+                        if (currentQuestionIndex == questions.size()) {
+                            Intent intent = new Intent(BasicQuestions.this, EmotionRatingBarActivity.class);
+                            startActivity(intent);
+                            finishAffinity();
+                        }
+                    }
+                });
+
+
+                break;
         }
+
     }
 }

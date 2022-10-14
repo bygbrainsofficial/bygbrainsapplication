@@ -15,6 +15,13 @@
         android:theme="@style/Theme.BygBrains"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activity.HomePage"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".stress.ResultPageStress"
             android:exported="false">
             <meta-data
@@ -92,13 +99,13 @@
             android:name=".activity.UserDetails"
             android:exported="false" />
         <activity
-            android:name=".activity.StartingPage"
+            android:name=".activity.AddPostAdmin"
             android:exported="false" />
         <activity
             android:name=".activity.BasicQuestions"
             android:exported="false" />
         <activity
-            android:name=".activity.HomePage"
+            android:name=".activity.StartingPage"
             android:exported="true"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>

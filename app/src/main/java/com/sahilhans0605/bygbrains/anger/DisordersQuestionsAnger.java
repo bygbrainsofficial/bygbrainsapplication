@@ -64,7 +64,6 @@ public class DisordersQuestionsAnger extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.option1D:
                 chosen = binding.option1D.getText().toString();
-
                 yes += 0;
                 setNextQuestion();
                 break;

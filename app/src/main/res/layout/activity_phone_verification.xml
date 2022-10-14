@@ -46,7 +46,7 @@
         android:layout_height="wrap_content"
         android:drawableStart="@drawable/age_blue"
         android:drawablePadding="0dp"
-        android:hint="Your age"
+        android:hint="Enter OTP"
         android:textAlignment="center"
         android:gravity="center"
         android:textColor="@color/black"

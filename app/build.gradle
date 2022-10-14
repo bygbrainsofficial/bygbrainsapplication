@@ -59,6 +59,8 @@ dependencies {
     implementation 'com.github.smarteist:autoimageslider:1.4.0'
     implementation 'com.github.sujithkanna:smileyrating:2.0.0'
     implementation 'com.github.anastr:speedviewlib:1.0.8'
+    implementation 'com.karumi:dexter:6.2.3'
+
 
     //LottieFiles for LottieJSON animations
     implementation "com.airbnb.android:lottie:3.4.0"
