@@ -37,7 +37,7 @@ public class BasicQuestions extends AppCompatActivity {
     FirebaseAuth auth;
     String userName;
     Boolean selected = true;
-
+    int progress = 0;
 
 
     @Override
@@ -70,6 +70,8 @@ public class BasicQuestions extends AppCompatActivity {
 
     void setNextQuestion() {
         selected = false;
+        binding.determinateBar.setMax(100);
+        binding.determinateBar.setProgress(progress);
         if (currentQuestionIndex < questions.size()) {
             question = questions.get(currentQuestionIndex);
             binding.questionD.setText(question.getQuestion());
@@ -87,7 +89,7 @@ public class BasicQuestions extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.option1D:
                 chosen = binding.option1D.getText().toString();
-
+                progress += 33.33;
                 dialog.show();
                 Map<String, String> map = new HashMap<>();
                 map.put(question.getQuestion(), chosen);
@@ -110,8 +112,10 @@ public class BasicQuestions extends AppCompatActivity {
                 break;
             case R.id.option2D:
                 chosen = binding.option2D.getText().toString();
+                progress += 33.33;
                 dialog.show();
                 map = new HashMap<>();
+
                 map.put(question.getQuestion(), chosen);
                 db.getReference().child("BasicQuestions").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(question.getId()).setValue(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -132,6 +136,7 @@ public class BasicQuestions extends AppCompatActivity {
                 break;
             case R.id.option3D:
                 chosen = binding.option3D.getText().toString();
+                progress += 33.33;
                 dialog.show();
                 map = new HashMap<>();
                 map.put(question.getQuestion(), chosen);
@@ -154,6 +159,7 @@ public class BasicQuestions extends AppCompatActivity {
                 break;
             case R.id.option4D:
                 chosen = binding.option4D.getText().toString();
+                progress += 33.33;
                 dialog.show();
                 map = new HashMap<>();
                 map.put(question.getQuestion(), chosen);
@@ -176,6 +182,7 @@ public class BasicQuestions extends AppCompatActivity {
                 break;
             case R.id.option5D:
                 chosen = binding.option5D.getText().toString();
+                progress += 33.33;
                 dialog.show();
                 map = new HashMap<>();
                 map.put(question.getQuestion(), chosen);
