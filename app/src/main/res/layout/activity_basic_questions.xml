@@ -4,137 +4,190 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.BasicQuestions">
-
-    <TextView
-        android:id="@+id/questionD"
-        android:layout_width="263dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:gravity="center"
-        android:text="Question"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/interactionD"
-        android:layout_width="263dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:gravity="center"
-        android:text="Interaction"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/option5D" />
-
-    <TextView
-        android:id="@+id/option3D"
-        android:layout_width="263dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/textview"
-        android:backgroundTint="@color/purple_500"
-        android:gravity="center"
-        android:onClick="next"
-        android:text="option3"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/option2D" />
-
-    <TextView
-        android:id="@+id/option5D"
-        android:layout_width="263dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/textview"
-        android:backgroundTint="@color/purple_500"
-        android:gravity="center"
-        android:onClick="next"
-        android:text="option5"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/option4D" />
-
+    tools:context=".activity.BasicQuestions"
+    android:background="@color/blue_theme">
 
 
     <TextView
-        android:id="@+id/option4D"
-        android:layout_width="263dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/textview"
-        android:backgroundTint="@color/purple_500"
-        android:gravity="center"
-        android:onClick="next"
-        android:text="option4"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/option3D" />
-
-    <TextView
-        android:id="@+id/option2D"
-        android:layout_width="263dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/textview"
-        android:backgroundTint="@color/purple_500"
-        android:gravity="center"
-        android:onClick="next"
-        android:text="option2"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/option1D" />
-
-    <TextView
-        android:id="@+id/option1D"
-        android:layout_width="263dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/textview"
-        android:gravity="center"
-        android:text="option1"
-        android:backgroundTint="@color/purple_500"
-        android:onClick="next"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questionD" />
-
-    <Button
-        android:id="@+id/buttonD"
+        android:id="@+id/heading1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:onClick="next"
-        android:text="next"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="@+id/interactionD"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@+id/interactionD"
-        app:layout_constraintTop_toBottomOf="@+id/interactionD" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Hey! There, "
+        android:fontFamily="@font/inter_bold"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:textSize="30sp"
+        android:layout_margin="20dp"/>
+
+
+    <TextView
+        android:id="@+id/heading2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Here are few question we want to ask you before getting started"
+        android:fontFamily="@font/inter_regular"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp"
+        android:padding="20dp"
+        app:layout_constraintTop_toBottomOf="@id/heading1"
+        />
+    <ProgressBar
+        android:id="@+id/determinateBar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/heading2"
+        android:layout_margin="20dp"
+        android:progressBackgroundTint="@color/white"
+        android:progress="25"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/determinateBar"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+        <TextView
+            android:id="@+id/questionD"
+            android:layout_width="263dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="Question"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/interactionD"
+            android:layout_width="263dp"
+            tools:text="TextView"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Interaction"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/option5D" />
+
+        <TextView
+            android:id="@+id/option3D"
+            android:layout_width="263dp"
+            android:layout_height="44dp"
+            android:background="@drawable/textview"
+            android:backgroundTint="#FF8600"
+            android:gravity="center"
+            android:onClick="next"
+            android:text="option3"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/option2D" />
+
+        <TextView
+            android:id="@+id/option5D"
+            android:layout_width="263dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/textview"
+            android:backgroundTint="#FF8600"
+            android:gravity="center"
+            android:onClick="next"
+            android:text="option5"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/option4D" />
+
+
+
+        <TextView
+            android:id="@+id/option4D"
+            android:layout_width="263dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/textview"
+            android:backgroundTint="#FF8600"
+            android:gravity="center"
+            android:onClick="next"
+            android:text="option4"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/option3D" />
+
+        <TextView
+            android:id="@+id/option2D"
+            android:layout_width="263dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/textview"
+            android:backgroundTint="#FF8600"
+            android:gravity="center"
+            android:onClick="next"
+            android:text="option2"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/option1D" />
+        <TextView
+            android:id="@+id/option1D"
+            android:layout_width="263dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/textview"
+            android:gravity="center"
+            android:text="option1"
+            android:backgroundTint="#FF8600"
+            android:onClick="next"
+
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/questionD" />
+
+        <Button
+            android:id="@+id/buttonD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:onClick="next"
+            android:text="next"
+            tools:text="TextView"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/interactionD"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="@+id/interactionD"
+            app:layout_constraintTop_toBottomOf="@+id/interactionD" />
+
+
+    </LinearLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
